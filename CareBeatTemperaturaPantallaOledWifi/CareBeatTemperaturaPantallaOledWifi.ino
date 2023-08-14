@@ -103,24 +103,24 @@ void loop() {
   Serial.println(t);
 
   if (t == 30) {
-    statusClima = "Temperatura estable";
+    //statusClima = "Temperatura estable";
     oled.clearDisplay();
     oled.display();
-    Firebase.setString("estado/status",statusClima);
+    statusClima = Firebase.getString("estado/estatus");
   }else if(t < 30) {
-    statusClima = "Temperatura baja";
+    //statusClima = "Temperatura baja";
     oled.clearDisplay();
     oled.display();
-    Firebase.setString("estado/status",statusClima );
+    statusClima = Firebase.getString("estado/estatus" );
   }else if (t >= 31){
-    statusClima = "Temperatura alta";
+    //statusClima = "Temperatura alta";
     oled.clearDisplay();
     oled.display();
-    Firebase.setString("estado/status",statusClima );
+    statusClima = Firebase.getString("estado/estatus" );
   } else {
     oled.clearDisplay();
     oled.display();
-    Firebase.setString("estado/status",statusInfo );
+    statusClima = Firebase.getString("estado/estatus" );
   }
 
   /*------------pantalla oled-----------*/

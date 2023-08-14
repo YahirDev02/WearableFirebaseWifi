@@ -71,15 +71,15 @@ void loop() {
 
   if (t == 30) {
     statusClima = "Temperatura estable";
-    Firebase.setString("estado/status",statusClima);
+    Firebase.setString("estado/estatus",statusClima);
   }else if(t < 30) {
     statusClima = "Temperatura baja";
-    Firebase.setString("estado/status",statusClima );
+    Firebase.setString("estado/estatus",statusClima );
   }else if (t >= 31){
     statusClima = "Temperatura alta";
-    Firebase.setString("estado/status",statusClima );
+    Firebase.setString("estado/estatus",statusClima );
   } else {
-    Firebase.setString("estado/status",statusInfo );
+    Firebase.setString("estado/estatus",statusInfo );
   }
 
   if (Firebase.failed()) {
